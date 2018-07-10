@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
    - name: web-server
-     image: nginx
+     image: nginx:latest
      imagePullPolicy: IfNotPresent
      volumeMounts:
        - mountPath: /srv
@@ -15,4 +15,3 @@ spec:
      persistentVolumeClaim:
        claimName: csi-cvmfs-pvc
        readOnly: true
-

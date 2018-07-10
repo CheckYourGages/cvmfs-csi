@@ -6,7 +6,7 @@ import (
 	"path"
 
 	"github.com/golang/glog"
-	"gitlab.cern.ch/cloud-infrastructure/cvmfs-csi/pkg/cvmfs"
+	"../pkg/cvmfs"
 )
 
 func init() {

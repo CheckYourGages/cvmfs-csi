@@ -31,7 +31,7 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: csi-cvmfsplugin
-    namespace: default
+    namespace: slate-core
 roleRef:
   kind: ClusterRole
   name: csi-cvmfsplugin
@@ -78,7 +78,7 @@ spec:
             capabilities:
               add: ["SYS_ADMIN"]
             allowPrivilegeEscalation: true
-          image: csi-cvmfsplugin:v0.2.0
+          image: gglupker/csi-cvmfsplugin:latest
           args :
             - "--nodeid=$(NODE_ID)"
             - "--endpoint=$(CSI_ENDPOINT)"

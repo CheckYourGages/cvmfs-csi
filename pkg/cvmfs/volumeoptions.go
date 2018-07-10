@@ -9,6 +9,7 @@ type volumeOptions struct {
 	Repository string
 	Tag        string
 	Hash       string
+	Proxy      string
 }
 
 func validateNonEmptyField(field, fieldName string) error {
@@ -22,6 +23,10 @@ func validateNonEmptyField(field, fieldName string) error {
 func (o *volumeOptions) validate() error {
 	if err := validateNonEmptyField(o.Repository, "repository"); err != nil {
 		return err
+	}
+
+	if o.Proxy == "" {
+		o.Proxy = "DIRECT"
 	}
 
 	if o.Hash == "" && o.Tag == "" {
@@ -51,6 +56,10 @@ func newVolumeOptions(volOptions map[string]string) (*volumeOptions, error) {
 	)
 
 	if err = extractOption(&opts.Repository, "repository", volOptions); err != nil {
+		return nil, err
+	}
+
+	if err = extractOption(&opts.Proxy, "proxy", volOptions); err != nil {
 		return nil, err
 	}
 

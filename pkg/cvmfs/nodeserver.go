@@ -79,6 +79,7 @@ func (ns *nodeServer) NodePublishVolume(ctx context.Context, req *csi.NodePublis
 		VolUuid: volUuid,
 		Tag:     volOptions.Tag,
 		Hash:    volOptions.Hash,
+		Proxy:   volOptions.Proxy,
 	}
 
 	if err := confData.writeToFile(); err != nil {

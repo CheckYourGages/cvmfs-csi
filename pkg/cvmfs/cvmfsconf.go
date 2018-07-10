@@ -17,6 +17,7 @@ const repoConf = `
 {{fileContents "/etc/cvmfs/default.local"}}
 
 CVMFS_CACHE_BASE={{cacheBase .VolUuid}}
+CVMFS_HTTP_PROXY={{.Proxy}}
 
 {{if .Hash}}
 CVMFS_ROOT_HASH={{.Hash}}
@@ -47,6 +48,7 @@ func init() {
 type cvmfsConfigData struct {
 	VolUuid   string
 	Tag, Hash string
+	Proxy string
 }
 
 func (d *cvmfsConfigData) writeToFile() error {
