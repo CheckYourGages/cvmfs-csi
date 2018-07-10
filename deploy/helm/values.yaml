@@ -1,0 +1,10 @@
+
+Instance: cvmfs-demo
+
+CVMFS:
+  Repository: atlas.cern.ch
+  Proxy: DIRECT
+
+Nginx:
+  Dummy: Your Settings Here
+  

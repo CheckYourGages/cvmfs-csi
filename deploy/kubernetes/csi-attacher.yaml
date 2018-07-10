@@ -33,7 +33,7 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: csi-attacher
-    namespace: test-cvmfs
+    namespace: slate-core
 roleRef:
   kind: ClusterRole
   name: external-attacher-runner
@@ -50,7 +50,7 @@ spec:
   selector:
     app: csi-attacher
   ports:
-    - name: dummy
+    - name: cvmfs-csi-port
       port: 12345
 
 ---
