@@ -1,0 +1,8 @@
+# Version of Kubernetes in use
+apiVersion: v1
+# Version of application packaged for installation
+appVersion: "1.0"
+description: A Helm chart to install the CVMFS CSI onto a cluster
+name: cvmfs-csi
+# Chart version
+version: 0.1.0

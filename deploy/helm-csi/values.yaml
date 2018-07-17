@@ -1,0 +1,5 @@
+# Namespace that the CVMFS CSI will be deployed to
+Namespace: slate-core
+
+# Port that CVMFS should utilize for internal communication
+Port: 12345
